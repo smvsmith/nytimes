@@ -36,7 +36,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    raise 'be'
     params.require(:article).permit(:title, :body)
   end
 
