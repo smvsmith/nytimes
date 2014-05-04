@@ -1,0 +1,24 @@
+<% if @article.errors.any? %>
+  <div class="error">
+  <% @article.errors.messages.each do |attribute, messages| %>
+    <div>
+    <% messages.each do |message| %>  
+      <%= attribute %>: <%= message %>
+      <br>
+    <% end %>
+    <br>
+    </div>
+  <% end %>
+  </div>
+  <br>
+<% end %>
+
+<%= form_for @article do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+  <br>
+  <%= f.submit %>
+<% end %>
